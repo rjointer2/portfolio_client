@@ -25,6 +25,7 @@ export type Sprite = {
     // physics
     x_velocity: number;
     y_velocity: number;
+    airbone: boolean;
 
     weight: number;
 

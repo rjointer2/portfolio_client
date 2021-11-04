@@ -9,6 +9,7 @@ export const initialGameState: Sprite = {
     x: 20,
     y: 0, 
     jumping: false,
+    airbone: true,
     x_velocity: 0,
     y_velocity: 0,
     weight: 1,
