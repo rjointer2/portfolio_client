@@ -31,15 +31,10 @@ export type Sprite = {
     // sprite sheet resources
 
     spriteSheet: {
-        walk: SpriteMap
+        walk: SpriteMap,
+        jump: SpriteMap
         /* jump: SpriteMap
         hurt: SpriteMap */
     }
-
-
     
-}
-
-export type initialGameObject = {
-    player: Sprite
 }
