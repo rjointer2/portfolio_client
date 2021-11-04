@@ -3,10 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "development": "NODE_ENV=development next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "production": "NODE_ENV=production next start"
   },
   "dependencies": {
     "@apollo/client": "^3.4.16",
