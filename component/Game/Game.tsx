@@ -28,6 +28,7 @@ export default function Game() {
 
             context.fillStyle = '#4e5766';
             context.fillRect(0, 0, 320, 180);
+            
 
             if(player.y >= 100) {
                 dispatchPlayer({ type: 'GROUNDED', payload: player, context: context, frame: frame });

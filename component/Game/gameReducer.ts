@@ -16,7 +16,7 @@ type action<T, P> = {
 
 type reducer<S, A> = ( s: S, a: A ) => S;
 
-export const gameReducer: reducer<Sprite, action<ActionMap<'FALL' | 'LIFT'>, Sprite>> = ( 
+export const gameReducer: reducer<Sprite, action<ActionMap<'FALL' | 'LIFT' | 'GROUNDED'>, Sprite>> = ( 
     state, action 
 ) => {
 
@@ -42,7 +42,7 @@ export const gameReducer: reducer<Sprite, action<ActionMap<'FALL' | 'LIFT'>, Spr
     if(action.type === "FALL") {
         return {
             ...state,
-            y: state.y + 1.2,
+            y: state.y + 3.2,
             jumping: false
         }
     }

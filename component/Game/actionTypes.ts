@@ -1,2 +1,0 @@
-
-export const WALK = "WALK";
