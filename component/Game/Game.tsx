@@ -8,7 +8,9 @@ import { initialGameState } from './initialGameState';
 
 export default function Game() {
 
-    const [ gameState, gameDispatch ] = useReducer( gameReducer, initialGameState )
+    const [ gameState, gameDispatch ] = useReducer( gameReducer, initialGameState );
+
+    //gameDispatch({ type: 'WALK', payload: gameState })
 
     const context = useMemo(() => {
         const canvas = document.querySelector('canvas') as HTMLCanvasElement
