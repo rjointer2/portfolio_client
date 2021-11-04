@@ -38,6 +38,8 @@ export default function Game() {
     })
 
     return (
-        <canvas></canvas>
+        <div>
+            
+        </div>
     )
 }

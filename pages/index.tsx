@@ -1,9 +1,14 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import { useState } from 'react'
+import Game from '../component/Game/Game'
 
 
 const Home: NextPage = () => {
+
+  const [ init, setInit ] = useState(false);
+
   return (
     <div>
       <Head>
@@ -12,9 +17,15 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        Hello World
-      </main>
+      
+      <div>
+        <canvas></canvas>
+      </div>
+
+      <div>
+        {  process.browser && init && <Game /> }
+        <button onClick={() => setInit(i => !i)}>Start Game</button>
+      </div>
 
       <footer>
 
