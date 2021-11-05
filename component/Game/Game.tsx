@@ -31,11 +31,18 @@ export default function Game() {
             context.fillStyle = '#4e5766';
             context.fillRect(0, 0, 320, 180);
 
-            
-            if( frame % 100 === 0 ) dispatchEnemies({ type: 'SPAWN', payload: enemies, context: context, frame: frame });
+            console.log(enemies)
+            //if( frame % 100 === 0 ) dispatchEnemies({ type: 'SPAWN', payload: enemies, context: context, frame: frame });
             dispatchEnemies({ type: 'WALK', payload: enemies, context: context, frame: frame });
+            dispatchEnemies({ type: 'FALL', payload: enemies, context: context, frame: frame });
+            dispatchEnemies({ type: 'GROUNDED', payload: enemies, context: context, frame: frame });
+            dispatchEnemies({ type: 'REMOVE', payload: enemies, context: context, frame: frame });
 
-            if(player.y > 100) dispatchPlayer({ type: 'GROUNDED', payload: player, context: context, frame: frame });
+
+
+
+            dispatchPlayer({ type: 'ANIMATE', payload: player, context: context, frame: frame });
+            if(player.y > 84) dispatchPlayer({ type: 'GROUNDED', payload: player, context: context, frame: frame });
 
             if(player.jumping === true && player.y >= 50 ) {
                 dispatchPlayer({ type: 'LIFT', payload: player, context: context, frame: frame });
@@ -51,7 +58,7 @@ export default function Game() {
         }, 20)
 
         const invokeController = (e: KeyboardEvent) => { 
-            if(e.code === 'ArrowUp' && player.jumping === false && player.y >= 100 ) {
+            if(e.code === 'ArrowUp' && player.jumping === false && player.y > 84 ) {
                 dispatchPlayer({ type: 'LIFT', payload: player, context: context, frame: frame })
             }
           }

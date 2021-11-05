@@ -3,9 +3,9 @@ import { Sprite } from "../../typeDef";
 export const initialPlayerState: Sprite = {
     hitbox_color: "#ff0000",
     name: "player",
-    height: 32,
-    width: 32,
-    originalHeight: 32,
+    height: 48,
+    width: 48,
+    originalHeight: 48,
     x: 20,
     y: 0, 
     jumping: false,
@@ -42,9 +42,9 @@ export const initialEnemyState: Sprite = {
     weight: 1,
     spriteSheet: {
         walk: {
-            cols: 5,
-            spriteSrc: './sprites/cat/walk.png',
-            spriteWidth: 240
+            cols: 4,
+            spriteSrc: './sprites/rat/walk.png',
+            spriteWidth: 128
         },
         jump: {
             cols: 1,

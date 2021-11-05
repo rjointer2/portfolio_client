@@ -4,17 +4,42 @@ import { initialEnemyState } from "../initialGameState";
 
 import { action, ActionMap, reducer } from "./gameReducerTypeDefs";
 
-export const enemyReducer: reducer<Array<Sprite>, action<ActionMap<'SPAWN' | 'WALK'>, Array<Sprite>>> = (
+export const enemyReducer: reducer<Array<Sprite>, action<ActionMap<'FALL' | 'WALK' | 'GROUNDED'>, Array<Sprite>>> = (
     state, action
 ) => {
 
     const { frame, context } = action;
 
+    if(action.type === 'GROUNDED') {
+        return state.map( e => {
+            return {
+                ...e,
+                y: 100,
+                jumping: false
+            }
+        })
+    }
+
+    if( action.type === 'FALL' ) {
+        return state.map( e => {
+            return {
+                ...e,
+                y: e.y + 3.2,
+                jumping: false
+            }
+        })
+    }   
+
     if(action.type === 'WALK') {
-        state.map(( e, i, arr ) => {
+
+
+        if(frame % 100 === 0) {
+            return [ ...state, initialEnemyState ]
+        }
+
+        return state.map(( e, i ) => {
 
             const sprite = document.createElement('img');
-
             const { spriteWidth, cols, spriteSrc } = e.spriteSheet.walk;
             sprite.src = spriteSrc
     
@@ -26,29 +51,25 @@ export const enemyReducer: reducer<Array<Sprite>, action<ActionMap<'SPAWN' | 'WA
             context.drawImage(
                 sprite, srcX, 0, 
             // w   h  
-                48, 48, 
+                32, 32, 
                 e.x, e.y, 
                 e.width, e.height,
             )
 
-            e.x = e.x - 1
+
+            return {
+                ...e,
+                x: e.x - 1
+            }
+
+
         })
-
-        console.log(state)
-
-        return state.filter(( e, i ) => e.x > -32)
-        
     }
 
-    if( action.type === 'SPAWN' ) {
-        const newEnemy = Object.create(initialEnemyState)
-        return [...state, newEnemy]
+    if( action.type === 'REMOVE' ) {
+        return state.filter(( e) => e.x > -32 )
     }
 
+    return state
     
-
-    return state;
-
-    
-
 }

@@ -3,28 +3,30 @@ import { Sprite } from "../../../typeDef";
 import { action, ActionMap, reducer } from "./gameReducerTypeDefs";
 
 
-export const gameReducer: reducer<Sprite, action<ActionMap<'FALL' | 'LIFT' | 'GROUNDED'>, Sprite>> = ( 
+export const gameReducer: reducer<Sprite, action<ActionMap<'FALL' | 'LIFT' | 'GROUNDED' | 'ANIMATE'>, Sprite>> = ( 
     state, action 
 ) => {
 
-    const sprite = document.createElement('img');
-    const { context, frame } = action;
+    if(action.type === 'ANIMATE') {
+        const sprite = document.createElement('img');
+        const { context, frame } = action;
 
-    const { spriteWidth, cols, spriteSrc } = state.spriteSheet.walk;
-    sprite.src = spriteSrc
+        const { spriteWidth, cols, spriteSrc } = state.spriteSheet.walk;
+        sprite.src = spriteSrc
 
-    const currentFrame = frame % cols;
-    const width = spriteWidth / cols;
-    const srcX = currentFrame * width;
+        const currentFrame = frame % cols;
+        const width = spriteWidth / cols;
+        const srcX = currentFrame * width;
 
-    context.rect(state.x, state.y, state.width, state.height);
-    context.drawImage(
-        sprite, srcX, 0, 
-    // w   h  
-        48, 48, 
-        state.x, state.y, 
-        state.width, state.height,
-    )
+        context.rect(state.x, state.y, state.width, state.height);
+        context.drawImage(
+            sprite, srcX, 0, 
+        // w   h  
+            48, 48, 
+            state.x, state.y, 
+            state.width, state.height,
+        )
+    }
 
     if(action.type === "FALL") {
         return {
@@ -45,7 +47,7 @@ export const gameReducer: reducer<Sprite, action<ActionMap<'FALL' | 'LIFT' | 'GR
     if(action.type === 'GROUNDED') {
         return {
             ...state,
-            y: 100,
+            y: 84,
             jumping: false
         }
     }
