@@ -4,7 +4,7 @@ import { initialEnemyState } from "../initialGameState";
 
 import { action, ActionMap, reducer } from "./gameReducerTypeDefs";
 
-export const enemyReducer: reducer<Array<Sprite>, action<ActionMap<'FALL' | 'WALK' | 'GROUNDED' | 'REMOVE'>, Array<Sprite>>> = (
+export const enemyReducer: reducer<Array<Sprite>, action<ActionMap<'FALL' | 'WALK' | 'GROUNDED' | 'REMOVE'>>> = (
     state, action
 ) => {
 
@@ -32,10 +32,9 @@ export const enemyReducer: reducer<Array<Sprite>, action<ActionMap<'FALL' | 'WAL
 
     if(action.type === 'WALK') {
 
-
-        if(frame % 100 === 0) {
-            return [ ...state, initialEnemyState ]
-        }
+        const arr = [ 100, 80, 50 ];
+        const conditon = Math.floor(Math.random() * arr.length)
+        if(frame % arr[conditon] === 0) return [ ...state, initialEnemyState]
 
         return state.map(( e, i ) => {
 
@@ -57,10 +56,17 @@ export const enemyReducer: reducer<Array<Sprite>, action<ActionMap<'FALL' | 'WAL
             )
 
 
+            if(action.player?.harmed) {
+                return {
+                    ...e
+                }    
+            }
+
             return {
                 ...e,
                 x: e.x - 3
-            }
+            } 
+
 
 
         })

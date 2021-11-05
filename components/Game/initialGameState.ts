@@ -5,13 +5,10 @@ export const initialPlayerState: Sprite = {
     name: "player",
     height: 48,
     width: 48,
-    originalHeight: 48,
+    harmed: false,
+    jumping: false,
     x: 20,
     y: 0, 
-    jumping: false,
-    airbone: true,
-    x_velocity: 0,
-    y_velocity: 0,
     weight: 1,
     spriteSheet: {
         walk: {
@@ -23,6 +20,11 @@ export const initialPlayerState: Sprite = {
             cols: 1,
             spriteSrc: './sprites/cat/jump.png',
             spriteWidth: 48
+        },
+        hurt: {
+            cols: 2,
+            spriteSrc: './sprites/cat/Hurt.png',
+            spriteWidth: 92
         }
     }
 }
@@ -30,15 +32,12 @@ export const initialPlayerState: Sprite = {
 export const initialEnemyState: Sprite = {
     hitbox_color: "#ff0000",
     name: "enemy",
+    jumping: false,
+    harmed: false,
     height: 32,
     width: 32,
-    originalHeight: 32,
     x: 300,
     y: 0, 
-    jumping: false,
-    airbone: true,
-    x_velocity: 0,
-    y_velocity: 0,
     weight: 1,
     spriteSheet: {
         walk: {
@@ -47,6 +46,12 @@ export const initialEnemyState: Sprite = {
             spriteWidth: 128
         },
         jump: {
+            cols: 1,
+            spriteSrc: './sprites/cat/jump.png',
+            spriteWidth: 48
+        },
+        // do not use!
+        hurt: {
             cols: 1,
             spriteSrc: './sprites/cat/jump.png',
             spriteWidth: 48

@@ -1,16 +1,16 @@
-import { Sprite } from "../../../typeDef";
+import { Sprite, SpriteMap } from "../../../typeDef";
 
 
 export type ActionMap<T> = {
     [P in keyof T]: P
 }
 
-export type action<T, P> = { 
+export type action<T> = { 
     type: T,
-    payload: P,
     context: CanvasRenderingContext2D,
     frame: number
-    enemies?: Array<Sprite>
+    enemies?: Array<Sprite>,
+    player?: Sprite
 }
 
 export type reducer<S, A> = ( s: S, a: A ) => S;
