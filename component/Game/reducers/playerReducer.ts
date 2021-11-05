@@ -1,20 +1,7 @@
 
-import { Sprite } from "../../typeDef";
+import { Sprite } from "../../../typeDef";
+import { action, ActionMap, reducer } from "./gameReducerTypeDefs";
 
-//import * as actionTypes from './actionTypes';
-
-type ActionMap<T> = {
-    [P in keyof T]: P
-}
-
-type action<T, P> = { 
-    type: T,
-    payload: P,
-    context: CanvasRenderingContext2D,
-    frame: number
-}
-
-type reducer<S, A> = ( s: S, a: A ) => S;
 
 export const gameReducer: reducer<Sprite, action<ActionMap<'FALL' | 'LIFT' | 'GROUNDED'>, Sprite>> = ( 
     state, action 
