@@ -1,3 +1,4 @@
+import { Sprite } from "../../../typeDef";
 
 
 export type ActionMap<T> = {
@@ -9,6 +10,7 @@ export type action<T, P> = {
     payload: P,
     context: CanvasRenderingContext2D,
     frame: number
+    enemies?: Array<Sprite>
 }
 
 export type reducer<S, A> = ( s: S, a: A ) => S;

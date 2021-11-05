@@ -4,7 +4,7 @@ import { initialEnemyState } from "../initialGameState";
 
 import { action, ActionMap, reducer } from "./gameReducerTypeDefs";
 
-export const enemyReducer: reducer<Array<Sprite>, action<ActionMap<'FALL' | 'WALK' | 'GROUNDED'>, Array<Sprite>>> = (
+export const enemyReducer: reducer<Array<Sprite>, action<ActionMap<'FALL' | 'WALK' | 'GROUNDED' | 'REMOVE'>, Array<Sprite>>> = (
     state, action
 ) => {
 
@@ -59,7 +59,7 @@ export const enemyReducer: reducer<Array<Sprite>, action<ActionMap<'FALL' | 'WAL
 
             return {
                 ...e,
-                x: e.x - 1
+                x: e.x - 3
             }
 
 

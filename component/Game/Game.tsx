@@ -31,24 +31,28 @@ export default function Game() {
             context.fillStyle = '#4e5766';
             context.fillRect(0, 0, 320, 180);
 
-            console.log(enemies)
-            //if( frame % 100 === 0 ) dispatchEnemies({ type: 'SPAWN', payload: enemies, context: context, frame: frame });
-            dispatchEnemies({ type: 'WALK', payload: enemies, context: context, frame: frame });
-            dispatchEnemies({ type: 'FALL', payload: enemies, context: context, frame: frame });
-            dispatchEnemies({ type: 'GROUNDED', payload: enemies, context: context, frame: frame });
-            dispatchEnemies({ type: 'REMOVE', payload: enemies, context: context, frame: frame });
+
+            // enemies functions
+            if( frame % 100 === 0 ) dispatchEnemies({ type: 'SPAWN', payload: enemies, context: context, frame: frame });
+            dispatchEnemies({ type: 'WALK', payload: enemies, context, frame });
+            dispatchEnemies({ type: 'FALL', payload: enemies, context, frame });
+            dispatchEnemies({ type: 'GROUNDED', payload: enemies, context, frame });
+            dispatchEnemies({ type: 'REMOVE', payload: enemies, context, frame });
 
 
 
+            // player functions
+            dispatchPlayer({ type: 'ANIMATE', payload: player, context, frame });
+            if(player.y > 84) dispatchPlayer({ type: 'GROUNDED', payload: player, context, frame });
 
-            dispatchPlayer({ type: 'ANIMATE', payload: player, context: context, frame: frame });
-            if(player.y > 84) dispatchPlayer({ type: 'GROUNDED', payload: player, context: context, frame: frame });
+            player.jumping === true && player.y >= 10 ? 
+                dispatchPlayer({ type: 'LIFT', payload: player, context, frame })
+            :
+                dispatchPlayer({ type: 'FALL', payload: player, context, frame })
+            
+            dispatchPlayer({ type: 'HURT', payload: player, context, frame, enemies });
 
-            if(player.jumping === true && player.y >= 50 ) {
-                dispatchPlayer({ type: 'LIFT', payload: player, context: context, frame: frame });
-            } else {
-                dispatchPlayer({ type: 'FALL', payload: player, context: context, frame: frame });
-            }
+            
 
             
 

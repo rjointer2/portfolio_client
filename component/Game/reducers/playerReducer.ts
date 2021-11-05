@@ -3,7 +3,7 @@ import { Sprite } from "../../../typeDef";
 import { action, ActionMap, reducer } from "./gameReducerTypeDefs";
 
 
-export const gameReducer: reducer<Sprite, action<ActionMap<'FALL' | 'LIFT' | 'GROUNDED' | 'ANIMATE'>, Sprite>> = ( 
+export const gameReducer: reducer<Sprite, action<ActionMap<'FALL' | 'LIFT' | 'GROUNDED' | 'ANIMATE' | 'HURT'>, Sprite>> = ( 
     state, action 
 ) => {
 
@@ -31,7 +31,7 @@ export const gameReducer: reducer<Sprite, action<ActionMap<'FALL' | 'LIFT' | 'GR
     if(action.type === "FALL") {
         return {
             ...state,
-            y: state.y + 3.2,
+            y: state.y + 3.5,
             jumping: false
         }
     }
@@ -39,7 +39,7 @@ export const gameReducer: reducer<Sprite, action<ActionMap<'FALL' | 'LIFT' | 'GR
     if(action.type === "LIFT") {
         return {
             ...state,
-            y: state.y - 3.2,
+            y: state.y - 3.5,
             jumping: true
         }
     }
@@ -49,6 +49,19 @@ export const gameReducer: reducer<Sprite, action<ActionMap<'FALL' | 'LIFT' | 'GR
             ...state,
             y: 84,
             jumping: false
+        }
+    }
+
+    if(action.type === 'HURT') {
+
+        action.enemies?.forEach((e) => {
+
+            if(state.x - e.x > -25 && state.x - e.x < 25 && state.y - e.y === -12.5 ) console.log('touched')
+
+        })
+
+        return {
+            ...state
         }
     }
  
