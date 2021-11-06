@@ -4,8 +4,13 @@ import Image from 'next/image'
 import { useState } from 'react'
 
 import dynamic from 'next/dynamic';
+import Nav from '../components/Nav/Nav';
+import Landing from '../components/Landing/Landing';
+import Footer from '../components/Footer/Footer';
+import Contact from '../components/Contact/Contact';
+import Experience from '../components/Experience/Experience';
 
-const Game = dynamic(() => import('../components/Game/Game'))
+
 
 
 const Home: NextPage = () => {
@@ -18,16 +23,21 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Nav/>
+      <Landing/>
+
+      <Experience />
+      <Contact />
+      <Footer />
+
       
-      <div>
+      {/* <div>
         <canvas></canvas>
-      </div>
+      </div> */}
 
-      {  process.browser && <Game /> }
+     {/*  { process.browser && <Game /> } */}
 
-      <footer>
-
-      </footer>
+      
     </>
   )
 }
