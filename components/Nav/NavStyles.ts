@@ -1,26 +1,24 @@
 
 import styled from "styled-components";
-import { primary, secondary } from "../Styled_components/palette";
+import { primary, secondary, white } from "../Styled_components/palette";
 
-export const NavContainer = styled.nav`
-    color: ${secondary};
+export const NavContainer = styled.div`
+    color: ${white};
     background: ${primary};
     height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1rem;
     position: sticky;
     top: 0;
     z-index: 10;
-    font-size: 20px;
 
     @media screen and (max-width: 960px) {
         transition: 0.8s all ease;
     }
 `;
 
-export const NavWrapper = styled.div`
+export const NavWrapper = styled.nav`
     display: flex;
     justify-content: space-between;
     z-index: 1;
@@ -33,6 +31,7 @@ export const NavUL = styled.ul`
     display: flex;
     align-items: center;
     list-style: none;
+    font-size: 12px;
 
     @media screen and (max-width: 720px) {
         display: none;
@@ -42,4 +41,16 @@ export const NavUL = styled.ul`
 
 export const NavLI = styled.li`
     padding: 0 10px 0 10px;
+`;
+
+export const HoverArhcor = styled.div`
+    position: absolute;
+    height: 4px;
+    left: 0;
+    width: 0;
+    background: #f6a3d1;
+    bottom: 1em;
+    transition: .6s;
+    border-radius: 4px;
+    transform: translateY(.7em);
 `;

@@ -16,7 +16,6 @@ export const Wavy = styled.div`
     span {
         position: relative;
         display: inline-block;
-        text-transform: uppercase;
         animation: wavy 1s ease-in-out infinite;
         animation-delay: calc(.1s * var(--i));
     }

@@ -10,10 +10,10 @@ export default function Logo() {
     return (
         <Wavy>
             <Span i={1} >R</Span>
-            <Span i={2} >O</Span>
-            <Span i={3} >O</Span>
-            <Span i={4} >D</Span>
-            <Span i={5} >Y</Span>
+            <Span i={2} >o</Span>
+            <Span i={3} >o</Span>
+            <Span i={4} >d</Span>
+            <Span i={5} >y</Span>
         </Wavy>
     )
 }
