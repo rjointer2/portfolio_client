@@ -64,7 +64,14 @@ export const HoverArhcor = styled.div`
 `;
 
 export const LogoWrapper = styled.div`
-    margin-right: 50vw;
+        margin-right: 50vw;
+    @media screen and (min-width: 302px) {
+        margin-right: 10vw;
+    }
+
+    @media screen and (min-width: 200px) {
+        margin-right: 1px;
+    }
 `;
 
 export const NavMenuBurger = styled(AiOutlineMenu)`
