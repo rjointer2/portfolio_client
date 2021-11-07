@@ -1,10 +1,10 @@
 
 import styled from "styled-components";
-import { primary, secondary } from "../../styles/palette";
+import { primary, secondary } from "../Styled_components/palette";
 
 export const NavContainer = styled.nav`
     color: ${secondary};
-    background: #3AAFA9;
+    background: ${primary};
     height: 80px;
     display: flex;
     justify-content: center;

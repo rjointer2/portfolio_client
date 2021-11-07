@@ -1,3 +1,3 @@
 
-export const primary = `#F2F2F2`;
+export const primary = `#d45d83`;
 export const secondary = `#BFBFBF`;

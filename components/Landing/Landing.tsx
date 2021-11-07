@@ -1,18 +1,19 @@
 
 
 import React from 'react';
+import { Background, Container, VideoBackground } from './LandingStyles';
 
 // copmponents
-import { FlexChild, FlexContainer } from '../Styled_components/Aligment';
+
 
 
 
 export default function Landing() {
     return (
-        <FlexContainer>
-            <FlexChild>
-                Hello World
-            </FlexChild>
-        </FlexContainer>
+        <Container>
+            <Background>
+                <VideoBackground autoPlay loop muted src='./bg.mp4'/>
+            </Background>
+        </Container>
     )
 }
