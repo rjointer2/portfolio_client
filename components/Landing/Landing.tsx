@@ -18,23 +18,29 @@ export default function Landing() {
                 <h2>
                     Roosevelt Jointer
                 </h2>
-                <LandingH2>
-                    <LandingScroll>
-                        Team Player
-                    </LandingScroll>
-                    <LandingScroll>
-                        Project Saver
-                    </LandingScroll>
-                    <LandingScroll>
-                        Problem Solver
-                    </LandingScroll>
-                    <LandingScroll>
-                        Web Scholar
-                    </LandingScroll>
-                    <LandingScroll>
-                        Full Stack Dev
-                    </LandingScroll>
-                </LandingH2>
+
+                <Inline>
+                    <LandingH2>
+                        A&nbsp;
+                    </LandingH2>
+                    <LandingH2>
+                        <LandingScroll>
+                            Team Player
+                        </LandingScroll>
+                        <LandingScroll>
+                            Project Saver
+                        </LandingScroll>
+                        <LandingScroll>
+                            Problem Solver
+                        </LandingScroll>
+                        <LandingScroll>
+                            Web Crawler
+                        </LandingScroll>
+                        <LandingScroll>
+                            Full Stack Dev
+                        </LandingScroll>
+                    </LandingH2>
+                </Inline>
             </Content>
         </Container>
     )

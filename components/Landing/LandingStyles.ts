@@ -41,7 +41,7 @@ export const Content = styled.div`
 export const LandingH2 = styled.h2`
 
     font-size: 20px;
-    text-align: center;
+
     height: 55px;
     overflow: hidden;
     @media screen and (max-width: 760px) {
@@ -92,4 +92,5 @@ export const LandingScroll = styled.div`
 export const Inline = styled.div`
     display: flex;
     line-height: 60px;
+    margin-left: 10px;
 `;

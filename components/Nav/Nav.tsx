@@ -1,7 +1,7 @@
 
 import React, { useEffect, useLayoutEffect, useRef } from 'react'
 import Logo from '../Logo/Logo'
-import { HoverArhcor, NavContainer, NavLI, NavUL, NavWrapper } from './NavStyles'
+import { HoverArhcor, LogoWrapper, NavContainer, NavLI, NavMenuBurger, NavUL, NavWrapper } from './NavStyles'
 
 export default function Nav() {
 
@@ -21,7 +21,7 @@ export default function Nav() {
             }
 
             listItems.forEach( listItem => {
-                listItem.addEventListener('mouseenter', ( e: Event<Element> ) => hoverUnder(e.target))
+                listItem.addEventListener('mouseenter', ( e ) => hoverUnder(e.target as HTMLDivElement )  )
             })
         }
 
@@ -34,9 +34,13 @@ export default function Nav() {
         <NavContainer>
             <div></div>
             <NavWrapper>
-                <Logo/>
                 <NavUL>
                     <HoverArhcor ref={hover} />
+                    <NavLI>
+                        <LogoWrapper>
+                            <Logo/>
+                        </LogoWrapper>
+                    </NavLI>
                     <NavLI>
                         Experience
                     </NavLI>
@@ -46,6 +50,7 @@ export default function Nav() {
                     <NavLI>
                         Contact
                     </NavLI>
+                    <NavMenuBurger />
                 </NavUL>
             </NavWrapper>
         </NavContainer>

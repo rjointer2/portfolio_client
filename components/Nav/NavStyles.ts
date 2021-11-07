@@ -1,6 +1,9 @@
 
 import styled from "styled-components";
+
 import { primary, secondary, white } from "../Styled_components/palette";
+
+import { AiOutlineMenu } from 'react-icons/ai'
 
 export const NavContainer = styled.div`
     color: ${white};
@@ -22,9 +25,12 @@ export const NavWrapper = styled.nav`
     display: flex;
     justify-content: space-between;
     z-index: 1;
-    width: 100vw;
     padding: 0 24px;
     max-width: 1100px;
+
+    @media screen and (min-width: 720px) {
+        width: 100vw;
+    }
 `;
 
 export const NavUL = styled.ul`
@@ -34,7 +40,9 @@ export const NavUL = styled.ul`
     font-size: 12px;
 
     @media screen and (max-width: 720px) {
-        display: none;
+        li:nth-child(n + 3) {
+            display: none;
+        }
     }
 
 `;
@@ -53,4 +61,14 @@ export const HoverArhcor = styled.div`
     transition: .6s;
     border-radius: 4px;
     transform: translateY(.7em);
+`;
+
+export const LogoWrapper = styled.div`
+    margin-right: 50vw;
+`;
+
+export const NavMenuBurger = styled(AiOutlineMenu)`
+    @media screen and (min-width: 720px) {
+        display: none;
+    }
 `;
