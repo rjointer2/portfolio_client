@@ -25,11 +25,11 @@ export const NavWrapper = styled.nav`
     display: flex;
     justify-content: space-between;
     z-index: 1;
-    padding: 0 24px;
     max-width: 1100px;
 
     @media screen and (min-width: 720px) {
-        width: 100vw;
+        padding: 0 24px;
+        flex-direction: column;
     }
 `;
 
@@ -61,16 +61,17 @@ export const HoverArhcor = styled.div`
     transition: .6s;
     border-radius: 4px;
     transform: translateY(.7em);
+
+    @media screen and (max-width: 400px) {
+        display: none;
+    }
 `;
 
 export const LogoWrapper = styled.div`
-        margin-right: 50vw;
-    @media screen and (min-width: 302px) {
-        margin-right: 10vw;
-    }
+    margin-right: 50vw;
 
-    @media screen and (min-width: 200px) {
-        margin-right: 1px;
+    @media screen and (max-width: 200px) {
+        margin-right: 1vw;
     }
 `;
 

@@ -1,6 +1,7 @@
 
 
 import React from 'react';
+import { TextCenter } from '../Styled_components/Aligment';
 import { Background, Container, Content, LandingH2, LandingScroll, VideoBackground, Inline } from './LandingStyles';
 
 // copmponents
@@ -15,10 +16,11 @@ export default function Landing() {
                 <VideoBackground autoPlay loop muted src='./bg.mp4'/>
             </Background>
             <Content>
-                <h2>
-                    Roosevelt Jointer
-                </h2>
-
+                <TextCenter>
+                    <h2>
+                        Roosevelt Jointer
+                    </h2>
+                </TextCenter>
                 <Inline>
                     <LandingH2>
                         A&nbsp;
