@@ -24,7 +24,7 @@ export default function F_Experience() {
             </FlexChild>
 
             <FlexChild>
-                <div style={{ height: 180, width: 320, background: 'gray' }} ></div>
+               
             </FlexChild>
         </Flex_Container>
     )

@@ -16,7 +16,7 @@ export const Flex_Footer = styled.div`
     display: flex;
     align-items: center;
 
-    @media screen and (max-width: 720px) {
+    @media screen and (max-width: 420px) {
         flex-direction: column;
     }
 `;

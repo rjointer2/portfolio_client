@@ -7,7 +7,7 @@ export const Flex_Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;;
-    height: 80vh;
+    height: 800px;
 
     @media screen and (max-width: 720px) {
         flex-direction: column;

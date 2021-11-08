@@ -1,7 +1,6 @@
 
 import styled from "styled-components";
 
-const arr = [1, 2, 3, 4, 5];
 
 type I = {  i: number };
 

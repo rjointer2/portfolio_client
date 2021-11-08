@@ -26,7 +26,6 @@ const Home: NextPage = () => {
       </Head>
 
       <Nav/>
-      
       <Landing/>
       <Front_End_Experience />
       <Full_Stack_Experience />
