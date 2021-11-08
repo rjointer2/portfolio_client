@@ -31,3 +31,7 @@ export const Text = styled.p`
     overflow-wrap: break-word;
     inline-size: 150px;
 `;
+
+export const SmallText = styled.p`
+    font-size: 9px;
+`;
