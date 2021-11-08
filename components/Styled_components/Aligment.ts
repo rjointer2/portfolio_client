@@ -27,7 +27,7 @@ export const TextCenter = styled.div`
 
 export const Text = styled.p`
     font-size: 12px;
-    padding: 2.5%;
+    padding: 10px 0;
     overflow-wrap: break-word;
     inline-size: 150px;
 `;

@@ -10,6 +10,7 @@ import Footer from '../components/Footer/Footer';
 import Contact from '../components/Contact/Contact';
 import Experience from '../components/Experience/Experience';
 import Front_End_Experience from '../components/Front_End_Experience/Front_End_Experience';
+import Full_Stack_Experience from '../components/Full_Stack_Experience/Full_Stack_Experience';
 
 
 
@@ -27,6 +28,7 @@ const Home: NextPage = () => {
       <Nav/>
       <Landing/>
       <Front_End_Experience />
+      <Full_Stack_Experience />
 
       <Contact />
       <Footer />
