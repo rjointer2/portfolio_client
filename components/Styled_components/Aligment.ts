@@ -15,9 +15,13 @@ export const Flex_Container = styled.div`
 `;
 
 export const FlexChild = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @media screen and ( max-width: 500px ) {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 `;
 
 export const Game_Container = styled.div`
