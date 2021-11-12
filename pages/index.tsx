@@ -31,16 +31,7 @@ const Home: NextPage = () => {
       <Full_Stack_Experience />
 
       <Contact />
-      <Footer />
-
-      
-      {/* <div>
-        <canvas></canvas>
-      </div> */}
-
-     {/*  { process.browser && <Game /> } */}
-
-      
+      <Footer />    
     </>
   )
 }

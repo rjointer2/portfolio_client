@@ -75,5 +75,9 @@ export default function Game() {
         
     })
 
-    return <button onClick={() => setInit(i => !i)}>Start Game</button>
+    return (
+        <div>
+            <button onClick={() => setInit(i => !i)}>Start Game</button>
+        </div>
+    )
 }

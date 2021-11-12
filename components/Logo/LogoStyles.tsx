@@ -10,7 +10,7 @@ export const Span = styled.span<I>`
 
 export const Wavy = styled.div`
     position: relative;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
 
     span {
         position: relative;
@@ -34,10 +34,6 @@ export const Wavy = styled.div`
         }
     }
 
-    @media screen and (max-width: 300px) {
-        inline-size: 100px;
-        overflow-wrap: break-word;
-    }
 `;
 
 

@@ -1,21 +1,29 @@
 
 
 import styled from "styled-components";
-import { secondary } from "./palette";
+import { primary, secondary } from "./palette";
 
 export const Flex_Container = styled.div`
     display: flex;
     justify-content: center;
-    align-items: center;;
-    height: 800px;
 
+    height: 800px;
+    
     @media screen and (max-width: 720px) {
         flex-direction: column;
     }
 `;
 
 export const FlexChild = styled.div`
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
+export const Game_Container = styled.div`
+    @media screen and (max-width: 328px) {
+        display: none;
+    }
 `;
 
 

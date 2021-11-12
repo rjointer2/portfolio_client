@@ -2,16 +2,20 @@
 import styled from "styled-components";
 import { primary, white } from "../Styled_components/palette";
 
+export const Container = styled.div`
+    
+`;
+
 export const Info = styled.div`
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 `;
 
 export const Form = styled.form`
     display: flex;
     flex-direction: column;
-    margin-left: 10vw;
-
+    align-items: center;
     margin-bottom: 200px;
 `;
 
@@ -39,7 +43,7 @@ export const TextArea = styled.textarea`
     padding-bottom: 2px;
     margin-top: 40px;
 
-    width: 87%;
+    width: 76.5%;
 `;
 
 export const Button = styled.button`
@@ -69,10 +73,30 @@ export const H2 = styled.h2`
 `;
 
 export const Inline = styled.div`
+    position: relative;
     display: flex;
+    text-align: center;
+
+    h2 {
+        color: red;
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        overflow: hidden;
+        white-space: nowrap;
+
+    }
 
     @media screen and (max-width: 720px) {
         flex-direction: column;
+    }
+
+    @media screen and (max-width: 300px) {
+        font-size: 12px;
+
+        h2 {
+            transform: translateX(-20px);
+        }
     }
 
 `;

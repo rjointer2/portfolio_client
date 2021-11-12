@@ -28,7 +28,6 @@ export const NavWrapper = styled.nav`
     max-width: 1100px;
 
     @media screen and (min-width: 720px) {
-        padding: 0 24px;
         flex-direction: column;
     }
 `;
@@ -38,6 +37,8 @@ export const NavUL = styled.ul`
     align-items: center;
     list-style: none;
     font-size: 12px;
+    white-space: nowrap;
+
 
     @media screen and (max-width: 720px) {
         li:nth-child(n + 3) {
