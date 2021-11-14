@@ -28,6 +28,45 @@ CUSTOM TYPES FOR GLOBAL STATE
 
 */
 
+// Menu
+
 export type MyActionTypes = {
     MENU_NAV: boolean
+}
+
+export type MenuStateType = {
+    [index: string]: any
+    MENU_NAV: boolean
+}
+
+export type MneuActionType = {
+    MENU_NAV: 'MENU_NAV'
+}
+
+export type MenuActionMap = ActionMap<MneuActionType>;
+
+
+// User
+
+export type UserStateType = {
+    [index: string]: any
+    user: null | {
+        username: string
+    }
+}
+
+export type UserActionType = {
+    USER_LOGGED_IN: 'USER_LOGGED_IN'
+}
+
+export type UserActionMap = ActionMap<UserActionType>
+
+
+
+export type InitialStateType = {
+    user: null,
+    menu: MenuStateType
+    highscore: {
+
+    }
 }
