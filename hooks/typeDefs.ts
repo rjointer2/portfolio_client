@@ -1,3 +1,6 @@
+import { combineReducer } from "./state_management/reducers/combineReducer";
+import { menuReducer } from "./state_management/reducers/menuReducer";
+import { userReducer } from "./state_management/reducers/userReducer";
 
 export type InitialState<S> = S;
 
@@ -15,9 +18,7 @@ export type ActionMap<AT> = {
 export type Reducer<S, A> = (state: S, action: A) => S;
 
 export type combineReducers<S, A> = (
-    reducers: {
-        [P in keyof S]: Reducer<S, A>
-    }
+    reducers: { [P in keyof S]: Reducer<S, A> }
 ) => Reducer<S, A>;
 
 
@@ -48,25 +49,31 @@ export type MenuActionMap = ActionMap<MneuActionType>;
 
 // User
 
+type UserData = {
+    username: string
+}
+
 export type UserStateType = {
     [index: string]: any
-    user: null | {
-        username: string
-    }
+    user: UserData
 }
 
 export type UserActionType = {
+    [index: string]: any
     USER_LOGGED_IN: 'USER_LOGGED_IN'
+    USER_LOGGED_OUT: 'USER_LOGGED_OUT'
 }
 
 export type UserActionMap = ActionMap<UserActionType>
 
 
+/* combine state and types */
+
+export type CombineActionTypes = UserActionMap & MenuActionMap
+
 
 export type InitialStateType = {
-    user: null,
+    [index: string]: any
+    user: UserStateType | null
     menu: MenuStateType
-    highscore: {
-
-    }
 }
