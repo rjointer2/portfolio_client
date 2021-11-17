@@ -13,7 +13,7 @@ import { userReducer } from "./userReducer";
 );
  */
 
-type ReducerMap<> = { 
+/* type ReducerMap = { 
   user: typeof userReducer, 
   menu: typeof menuReducer 
 }
@@ -21,7 +21,7 @@ type ReducerMap<> = {
 type CR<RM, S, A> = {
   ( r: {
     [P in keyof RM]: RM[P]
-  } ): ( s: RM[P], a: A ) => S
+  } ): ( s: S, a: A ) => S
 }
 
 const cr: CR<
@@ -34,4 +34,16 @@ const cr: CR<
   s
 )
 
-cr({ user: userReducer, menu: menuReducer })
+cr({ user: userReducer, menu: menuReducer }) */
+
+type RM<S, A = any> = ( r: {
+  [prop in keyof S]: Reducer<S[prop], A>
+}) => ( s: S, a: A ) => void
+
+const cr: RM<InitialStateType ,any> = (r) => ( s, a ) => Object.keys(r).reduce(
+  (acc, prop) => ({
+    ...acc,
+    [prop]: r[prop](acc[prop], a),
+  }),
+  s
+)

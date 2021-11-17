@@ -69,7 +69,7 @@ export type UserActionMap = ActionMap<UserActionType>
 
 /* combine state and types */
 
-export type CombineActionTypes = UserActionMap & MenuActionMap
+export type CombineActionTypes = UserActionMap
 
 
 export type InitialStateType = {
