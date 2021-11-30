@@ -1,6 +1,3 @@
-import { combineReducer } from "./state_management/reducers/combineReducer";
-import { menuReducer } from "./state_management/reducers/menuReducer";
-import { userReducer } from "./state_management/reducers/userReducer";
 
 export type InitialState<S> = S;
 
@@ -17,63 +14,35 @@ export type ActionMap<AT> = {
 
 export type Reducer<S, A> = (state: S, action: A) => S;
 
-export type combineReducers<S, A> = (
-    reducers: { [P in keyof S]: Reducer<S, A> }
-) => Reducer<S, A>;
 
-
-
-/* 
-
-CUSTOM TYPES FOR GLOBAL STATE 
-
-*/
+// Custom Types for Global State Management
 
 // Menu
 
-export type MyActionTypes = {
-    MENU_NAV: boolean
-}
 
-export type MenuStateType = {
-    [index: string]: any
-    MENU_NAV: boolean
+/* 
+export type MenuActionMap = {
+    type: 'MENU_NAV'
+    payload: string
 }
-
-export type MneuActionType = {
-    MENU_NAV: 'MENU_NAV'
-}
-
-export type MenuActionMap = ActionMap<MneuActionType>;
 
 
 // User
 
-type UserData = {
-    username: string
-}
 
 export type UserStateType = {
     [index: string]: any
-    user: UserData
+    user: {
+        username: string
+    }
 }
 
-export type UserActionType = {
-    [index: string]: any
-    USER_LOGGED_IN: 'USER_LOGGED_IN'
-    USER_LOGGED_OUT: 'USER_LOGGED_OUT'
+export type UserActionMap = {
+    type: {
+        USER_LOGGED_IN: 'USER_LOGGED_IN'
+        USER_LOGGED_OUT: 'USER_LOGGED_OUT'
+    }
+    payload: null | UserStateType
 }
 
-export type UserActionMap = ActionMap<UserActionType>
-
-
-/* combine state and types */
-
-export type CombineActionTypes = UserActionMap
-
-
-export type InitialStateType = {
-    [index: string]: any
-    user: UserStateType | null
-    menu: MenuStateType
-}
+ */
