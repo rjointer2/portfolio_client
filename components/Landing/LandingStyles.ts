@@ -12,7 +12,6 @@ export const Container = styled.div`
     z-index: 1;
     transform: translateY(-150px);
     padding-top: 60px;
-
 `;
 
 export const Background = styled.div`

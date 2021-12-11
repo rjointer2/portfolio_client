@@ -1,14 +1,33 @@
 
-
+// react
 import React from 'react';
 
+// components
+import { FlexChild, Flex_Container } from '../Styled_components/Aligment';
+import { Header2 } from '../Styled_components/Text';
+
 // styles
-import { Flex_Container } from '../Styled_components/Aligment';
-import { Button, Container, Form, H2, Img, Info, Inline, Input, TextArea } from './ContactStyles'
+import { Form, Img } from './ContactStyles'
 
 export default function Contact() {
     return (
-        <Container>
+        <Flex_Container>
+            <FlexChild>
+                <Header2>
+                    Leave a message!
+                </Header2>
+                <Img src='./images/group.png' />
+                <Form>
+                    <input placeholder="hi"/>
+                </Form>
+            </FlexChild>
+        </Flex_Container>
+    )
+}
+
+ /* 
+ 
+ <Container>
             <Form>
                 <Inline>
                     <h2>
@@ -31,6 +50,5 @@ export default function Contact() {
                 </Button>
             </Form>
         </Container>
-    )
-}
-
+ 
+ */

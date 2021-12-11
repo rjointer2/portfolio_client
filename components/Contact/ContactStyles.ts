@@ -2,6 +2,29 @@
 import styled from "styled-components";
 import { primary, white } from "../Styled_components/palette";
 
+export const Img = styled.img`
+    height: 150px;
+    width: 200px;
+
+    @media screen and (max-width: 300px) {
+        height: 90px;
+        width: 120px;
+    }
+`;
+
+export const Form = styled.form`
+    display: flex;
+    justify-content: center;
+    
+    input {
+        width: 50vw;
+    }
+`;
+
+/* 
+import styled from "styled-components";
+import { primary, white } from "../Styled_components/palette";
+
 export const Container = styled.div`
     
 `;
@@ -84,7 +107,6 @@ export const Inline = styled.div`
         bottom: 0;
         overflow: hidden;
         white-space: nowrap;
-
     }
 
     @media screen and (max-width: 720px) {
@@ -110,3 +132,4 @@ export const Img = styled.img`
         width: 120px;
     }
 `;
+ */

@@ -1,21 +1,30 @@
+
+// next 
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+
+// react 
 import { useState } from 'react'
 
-import dynamic from 'next/dynamic';
+// components
 import Nav from '../components/Nav/Nav';
 import Landing from '../components/Landing/Landing';
 import Footer from '../components/Footer/Footer';
 import Contact from '../components/Contact/Contact';
-import Experience from '../components/Experience/Experience';
 import Front_End_Experience from '../components/Front_End_Experience/Front_End_Experience';
 import Full_Stack_Experience from '../components/Full_Stack_Experience/Full_Stack_Experience';
 
+// hooks
+import { useGlobalState } from '../hooks/useGlobalState';
 
 
 
 const Home: NextPage = () => {
+
+  const { state } = useGlobalState();
+
+  console.log(state)
 
   return (
     <>
