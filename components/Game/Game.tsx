@@ -56,12 +56,17 @@ export default function Game() {
                 
                 // update the frame
                 setFrame( f => f + 1 )
+            } else {
+                context.fillStyle = '#4e5766';
+                context.fillRect(0, 0, 320, 180);
+                dispatchPlayer({ type: 'ANIMATE', context, frame });
             }
 
         }, 20)
 
         const invokeController = (e: KeyboardEvent) => { 
-            if(e.code === 'ArrowUp' && player.jumping === false && player.y > 82 ) {
+            console.log(e.code)
+            if(e.code === 'KeyW' && player.jumping === false && player.y > 82 ) {
                 dispatchPlayer({ type: 'LIFT', context: context, frame: frame })
             }
           }

@@ -1,2 +1,7 @@
 
-export {}
+import styled from "styled-components";
+
+export const FlexItems = styled.div`
+    display: flex;
+    justify-content: space-evenly;
+`;

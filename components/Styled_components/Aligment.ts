@@ -5,16 +5,30 @@ import { primary, secondary } from "./palette";
 
 export const Flex_Container = styled.div`
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
 
     height: 800px;
     
     @media screen and (max-width: 720px) {
         flex-direction: column;
     }
+    
 `;
 
 export const FlexChild = styled.div`
+
+    width: 350px;
+
+
+
+    ul {
+        padding-left: 20px;
+    }
+
+    ul li {
+        width: 10px;
+    }
+
     @media screen and ( max-width: 500px ) {
         text-align: center;
         display: flex;
@@ -22,7 +36,6 @@ export const FlexChild = styled.div`
         align-items: center;
         justify-content: center;
         overflow: hidden;
-
     }
 `;
 
@@ -44,6 +57,11 @@ export const Text = styled.p`
     padding: 10px 0;
     overflow-wrap: break-word;
     inline-size: 150px;
+
+    a {
+        font-size: 9px;
+        color: ${primary};
+    }
 `;
 
 export const SmallText = styled.p`

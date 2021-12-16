@@ -7,20 +7,25 @@ import { FlexChild, Flex_Container } from '../Styled_components/Aligment';
 import { Header2 } from '../Styled_components/Text';
 
 // styles
-import { Form, Img } from './ContactStyles'
+import { ContactFlexChild, Form, Img } from './ContactStyles'
 
 export default function Contact() {
     return (
         <Flex_Container>
-            <FlexChild>
+            <ContactFlexChild>
+                <Img src='./images/group.png' />
                 <Header2>
                     Leave a message!
                 </Header2>
-                <Img src='./images/group.png' />
                 <Form>
-                    <input placeholder="hi"/>
+                    <input placeholder="Full Name"/>
+                    <input placeholder="Email"/>
+                    <textarea placeholder="Write something"/>
+                    <button>
+                        Submit
+                    </button>
                 </Form>
-            </FlexChild>
+            </ContactFlexChild>
         </Flex_Container>
     )
 }

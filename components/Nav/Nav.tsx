@@ -1,7 +1,7 @@
 
 import React, { useEffect, useLayoutEffect, useRef } from 'react'
 import Logo from '../Logo/Logo'
-import { HoverArhcor, LogoWrapper, NavContainer, NavLI, NavMenuBurger, NavUL, NavWrapper } from './NavStyles'
+import { Flex, HoverArhcor, NavContainer,  } from './NavStyles'
 
 export default function Nav() {
 
@@ -13,7 +13,7 @@ export default function Nav() {
             return;
         } else {
             const line = document.querySelector(`.${hover.current?.getAttribute("class")?.split(" ")[1]}`) as HTMLDivElement
-            const listItems = document.querySelectorAll('nav ul li');
+            const listItems = document.querySelectorAll('nav li');
 
             const hoverUnder = ( a: HTMLDivElement ) => {
                 line.style.left = a.offsetLeft+"px"; 
@@ -32,27 +32,20 @@ export default function Nav() {
 
     return (
         <NavContainer>
-            <div></div>
-            <NavWrapper>
-                <NavUL>
-                    <HoverArhcor ref={hover} />
-                    <NavLI>
-                        <LogoWrapper>
-                            <Logo/>
-                        </LogoWrapper>
-                    </NavLI>
-                    <NavLI>
-                        Experience
-                    </NavLI>
-                    <NavLI>
-                        Play Scared Kitty
-                    </NavLI>
-                    <NavLI>
-                        Contact
-                    </NavLI>
-                    <NavMenuBurger />
-                </NavUL>
-            </NavWrapper>
+            <HoverArhcor ref={hover}/>
+            <li>
+                <Logo/>
+            </li>
+            <Flex/>
+            <li>
+                About
+            </li>
+            <li>
+                Scary Cat Game
+            </li>
+            <li>
+                Contact
+            </li>
         </NavContainer>
     )
 }
