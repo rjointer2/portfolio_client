@@ -1,7 +1,7 @@
 
 import React, { useEffect, useLayoutEffect, useRef } from 'react'
 import Logo from '../Logo/Logo'
-import { Flex, HoverArhcor, NavContainer,  } from './NavStyles'
+import { Flex, Hamburger, HoverArhcor, NavContainer,  } from './NavStyles'
 
 export default function Nav() {
 
@@ -45,6 +45,9 @@ export default function Nav() {
             </li>
             <li>
                 Contact
+            </li>
+            <li>
+                <Hamburger/>
             </li>
         </NavContainer>
     )

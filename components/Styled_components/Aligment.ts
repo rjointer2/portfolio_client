@@ -6,37 +6,30 @@ import { primary, secondary } from "./palette";
 export const Flex_Container = styled.div`
     display: flex;
     justify-content: space-evenly;
+    min-height: 600px;
+    padding: 50px 0 50px 0;
 
-    height: 800px;
-    
-    @media screen and (max-width: 720px) {
+    @media screen and ( max-width: 560px ) {
         flex-direction: column;
+        align-items: center;
     }
     
 `;
 
 export const FlexChild = styled.div`
 
-    width: 350px;
-
+    @media screen and ( max-width: 560px ) {
+        h2 {
+            text-align: center;
+        }
+    }
 
 
     ul {
         padding-left: 20px;
     }
 
-    ul li {
-        width: 10px;
-    }
 
-    @media screen and ( max-width: 500px ) {
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-    }
 `;
 
 export const Game_Container = styled.div`
@@ -46,24 +39,6 @@ export const Game_Container = styled.div`
 `;
 
 
-// Text
-
 export const TextCenter = styled.div`
     text-align: center;
-`;
-
-export const Text = styled.p`
-    font-size: 12px;
-    padding: 10px 0;
-    overflow-wrap: break-word;
-    inline-size: 150px;
-
-    a {
-        font-size: 9px;
-        color: ${primary};
-    }
-`;
-
-export const SmallText = styled.p`
-    font-size: 9px;
 `;

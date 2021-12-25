@@ -6,12 +6,14 @@ import React from 'react'
 import Link from 'next/dist/client/link';
 
 // styles
-import { SmallText, TextCenter } from '../Styled_components/Aligment';
+import { TextCenter } from '../Styled_components/Aligment';
 import { Anchor, Container, Flex_Footer } from './FooterStyles';
+import { SmallText } from '../Styled_components/Text';
 
 // icons 
 import { AiFillGithub, AiFillLinkedin, AiOutlineTwitter } from 'react-icons/ai';
 import { CgMail } from 'react-icons/cg';
+
 
 export default function Footer() {
     return (
