@@ -8,6 +8,7 @@ const initialState: State = {
     user: null,
     menu: {
         MENU_NAV: false,
+        MENNU_SAVE_SCORE: false
     }
 }
 
@@ -24,6 +25,7 @@ const userReducer: Reducer<State, ActionMap> = ( state, action ) => {
 
 const menuReducer: Reducer<State, ActionMap> = ( state, action ) => {
     state[action.type] = !action.payload
+    console.log(state)
     return state
 }
 

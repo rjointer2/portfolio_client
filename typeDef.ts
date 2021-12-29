@@ -45,6 +45,7 @@ type BaseState = {
     user: User | null
     menu: {
         MENU_NAV: boolean
+        MENNU_SAVE_SCORE: boolean
     }
 }
 
@@ -55,10 +56,8 @@ export type State = Partial<BaseState>
 export type ActionTypes = {
 
     // MENU TYPES
-    MENU_SEARCH: boolean,
+    MENNU_SAVE_SCORE: boolean,
     MENU_NAV: boolean,
-    MENU_COMMENT: boolean,
-    MENU_TODO: boolean,
 
     // USER TYPES
     USER_LOGGED_IN: null | User,
@@ -85,3 +84,11 @@ export type Reducer<S, A> = (state: S, action: A) => S;
 export type combineReducersType<S, A> = (
     reducers: { [P in keyof S]: Reducer<S, A> }
 ) => Reducer<S, A>;
+
+
+// styled components
+
+export type StyledProps = {
+    [index: string]: any
+    isOpen: boolean
+}

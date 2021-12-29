@@ -1,16 +1,26 @@
 
-import React, { useLayoutEffect, useMemo, useReducer, useState } from 'react';
+import React, { useLayoutEffect, useMemo, useReducer, useRef, useState } from 'react';
 
 // local state management
 import { gameReducer } from './reducers/playerReducer';
 import { initialPlayerState } from './initialGameState';
 import { enemyReducer } from './reducers/enemyReducer';
+import SaveScoreModal from '../SaveScoreDropDown/SaveScoreModal';
+import { useGlobalState } from '../../hooks/useGlobalState';
+
+// styles
 
 
 export default function Game() {
 
+    const { state, dispatch } = useGlobalState();
+    const { menu } = state;
+
     const [ init, setInit ] = useState(false);
     const [ frame, setFrame ] = useState(0);
+
+    // highscre 
+    const highscore = useRef(0)
 
     const [ player, dispatchPlayer ] = useReducer( gameReducer, initialPlayerState );
     const [ enemies, dispatchEnemies ] = useReducer( enemyReducer, []  )
@@ -26,6 +36,8 @@ export default function Game() {
     
 
     useLayoutEffect(() => {
+
+        
 
         const loop = setTimeout(() => {
 
@@ -55,7 +67,11 @@ export default function Game() {
 
                 
                 // update the frame
-                setFrame( f => f + 1 )
+                player.harmed ?
+                    false : setFrame( f => f + 1 )
+
+
+
             } else {
                 context.fillStyle = '#4e5766';
                 context.fillRect(0, 0, 320, 180);
@@ -65,7 +81,9 @@ export default function Game() {
         }, 20)
 
         const invokeController = (e: KeyboardEvent) => { 
-            console.log(e.code)
+            
+            if(player.harmed) return false
+
             if(e.code === 'KeyW' && player.jumping === false && player.y > 82 ) {
                 dispatchPlayer({ type: 'LIFT', context: context, frame: frame })
             }
@@ -82,7 +100,16 @@ export default function Game() {
 
     return (
         <div>
-            <button onClick={() => setInit(i => !i)}>Start Game</button>
+            <SaveScoreModal/>
+            { player.harmed ? `You lose, score is ${ frame }` : `Score ${ frame } `} <br/>
+            { player.harmed &&  <button onClick={ () => {
+                dispatch({ type: 'MENNU_SAVE_SCORE', payload: menu?.MENNU_SAVE_SCORE })
+            } }
+            
+            >Save your score?
+            </button> } <br/>
+            <button onClick={() => setInit(i => !i)}>Start Game</button> &nbsp;
+            <button onClick={() => document.location.reload() }>Reset Game</button>
         </div>
     )
 }

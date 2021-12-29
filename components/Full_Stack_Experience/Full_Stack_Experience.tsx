@@ -9,7 +9,7 @@ import { FlexChild, Flex_Container } from '../Styled_components/Aligment'
 import { GrMysql } from 'react-icons/gr';
 import { SiExpress, SiGraphql, SiMongodb, SiTypescript, SiJavascript, SiReact, SiSass, SiRedux, SiCss3, SiBootstrap } from 'react-icons/si';
 import { DiPhp } from 'react-icons/di';
-import { Icon, Icons } from './Full_Stack_Experience_Styles';
+import { Icon, Icons } from '../Styled_components/Icons';
 import { Header, Text } from '../Styled_components/Text';
 
 

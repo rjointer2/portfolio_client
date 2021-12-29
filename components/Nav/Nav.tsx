@@ -1,6 +1,7 @@
 
 import React, { useEffect, useLayoutEffect, useRef } from 'react'
 import Logo from '../Logo/Logo'
+import SaveScoreModal from '../SaveScoreDropDown/SaveScoreModal';
 import { Flex, Hamburger, HoverArhcor, NavContainer,  } from './NavStyles'
 
 export default function Nav() {
@@ -32,6 +33,7 @@ export default function Nav() {
 
     return (
         <NavContainer>
+            <SaveScoreModal/>
             <HoverArhcor ref={hover}/>
             <li>
                 <Logo/>

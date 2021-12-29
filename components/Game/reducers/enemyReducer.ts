@@ -68,7 +68,6 @@ export const enemyReducer: reducer<Array<Sprite>, action<ActionMap<'FALL' | 'WAL
             } 
 
 
-
         })
     }
 

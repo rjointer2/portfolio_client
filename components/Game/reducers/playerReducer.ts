@@ -3,7 +3,7 @@ import { Sprite } from "../../../typeDef";
 import { action, ActionMap, reducer } from "./gameReducerTypeDefs";
 
 
-export const gameReducer: reducer<Sprite, action<ActionMap<'FALL' | 'LIFT' | 'GROUNDED' | 'ANIMATE' | 'HURT'>>> = ( 
+export const gameReducer: reducer<Sprite, action<ActionMap<'FALL' | 'LIFT' | 'GROUNDED' | 'ANIMATE' | 'HURT' >>> = ( 
     state, action 
 ) => {
 
